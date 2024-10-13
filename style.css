@@ -1,5 +1,4 @@
 /* Definições globais */
-/* Definições globais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -43,6 +42,33 @@ nav ul li a {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    .sobre-container, .servicos-container, .metodos-container, .planos-container {
+        flex-direction: column; /* Coloca os itens em uma coluna em vez de em linha */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .servico, .metodo, .plano {
+        width: 100%; /* Garante que os planos e métodos ocupem toda a largura da tela em dispositivos menores */
+        margin: 20px 0; /* Adiciona espaçamento vertical entre os elementos */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-titulo h2 {
+        font-size: 1.5rem; /* Reduz o tamanho do título em telas muito pequenas */
+    }
+
+    .header-titulo h3 {
+        font-size: 0.9rem; /* Reduz o subtítulo */
+    }
+
+    .botao-saiba-mais {
+        font-size: 1rem; /* Ajusta o tamanho do botão */
+        padding: 8px 16px;
+    }
+}
+
 /* Resto do seu CSS segue normalmente... */
 
 
@@ -71,7 +97,7 @@ section {
 
 .sobre-imagem img {
     width: 100%; /* A imagem irá ocupar 100% da largura do contêiner */
-    max-width: 250px; /* Define um tamanho máximo para a imagem */
+    max-width: 350px; /* Define um tamanho máximo para a imagem em telas maiores */
     height: auto; /* Mantém a proporção da altura */
     object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente */
     border-radius: 8px; /* Arredonda as bordas da imagem */
@@ -83,12 +109,13 @@ section {
 .sobre-imagem img:hover {
     transform: scale(1.05); /* Aumenta a imagem ligeiramente ao passar o mouse */
 }
+
 .sobre-texto {
     max-width: 600px;
 }
 
 .sobre-texto h2 {
-    color: #4F772D;
+    color: #4F772D; 
     font-size: 2rem;
     margin-bottom: 20px;
 }
@@ -254,36 +281,46 @@ footer.rodape {
 
 .contact-item {
     margin: 10px 0; /* Espaçamento entre os itens de contato */
+    display: flex;
+    justify-content: center; /* Centraliza os itens na linha */
+    align-items: center; /* Alinha verticalmente */
 }
 
 .whatsapp-link,
-.instagram-link {
-    display: inline-flex;
+.instagram-link,
+.email-container {
+    display: flex;
     align-items: center; /* Alinha verticalmente o ícone e o texto */
     color: white;
     text-decoration: none;
-    font-size: 1rem; /* Tamanho da fonte do usuário */
+    font-size: 1rem; /* Tamanho da fonte */
 }
 
 .social-icon {
-    width: 24px; /* Tamanho do ícone */
+    width: 24px; /* Tamanho dos ícones */
     height: 24px;
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    margin-right: 8px; /* Espaço entre ícone e texto */
 }
 
 .social-icon:hover {
-    filter: brightness(0.8); /* Escurece o ícone ao passar o mouse */
+    filter: brightness(0.8); /* Efeito hover */
 }
 
-/* Estilo específico para o email */
-.email-container {
-    display: inline-flex; /* Usa inline-flex para alinhar com outros links */
-    align-items: center; /* Alinha verticalmente o ícone e o texto */
-    color: white; /* Mantém a cor do texto do email consistente */
+/* Defina uma largura fixa para a coluna dos ícones */
+.icon-container {
+    width: 40px; /* Ajuste conforme necessário */
+    display: flex;
+    justify-content: center; /* Centraliza o ícone no container */
 }
 
+/* Ajuste adicional para o email */
 .email-container p {
-    margin: 0; /* Remove a margem do parágrafo para evitar desalinhamento */
-    font-size: 1rem; /* Tamanho da fonte do email */
+    margin: 0; /* Remove margens padrão */
+    font-size: 1rem;
 }
 
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+}
