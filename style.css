@@ -1,4 +1,5 @@
 /* Definições globais */
+/* Definições globais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -42,6 +43,8 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Resto do seu CSS segue normalmente... */
+
 @media (max-width: 768px) {
     .sobre-container, .servicos-container, .metodos-container, .planos-container {
         flex-direction: column; /* Coloca os itens em uma coluna em vez de em linha */
@@ -69,10 +72,6 @@ nav ul li a {
     }
 }
 
-/* Resto do seu CSS segue normalmente... */
-
-
-
 section {
     padding: 40px 20px;
 }
@@ -97,7 +96,7 @@ section {
 
 .sobre-imagem img {
     width: 100%; /* A imagem irá ocupar 100% da largura do contêiner */
-    max-width: 350px; /* Define um tamanho máximo para a imagem em telas maiores */
+    max-width: 250px; /* Define um tamanho máximo para a imagem */
     height: auto; /* Mantém a proporção da altura */
     object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente */
     border-radius: 8px; /* Arredonda as bordas da imagem */
@@ -109,13 +108,12 @@ section {
 .sobre-imagem img:hover {
     transform: scale(1.05); /* Aumenta a imagem ligeiramente ao passar o mouse */
 }
-
 .sobre-texto {
     max-width: 600px;
 }
 
 .sobre-texto h2 {
-    color: #4F772D; 
+    color: #4F772D;
     font-size: 2rem;
     margin-bottom: 20px;
 }
