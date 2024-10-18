@@ -51,6 +51,10 @@ nav ul li a {
         align-items: center; /* Centraliza os itens */
     }
 
+    h3 {
+    color: white; /* Define a cor do texto como branca */
+}
+
     .servico, .metodo, .plano {
         width: 100%; /* Garante que os planos e métodos ocupem toda a largura da tela em dispositivos menores */
         margin: 20px 0; /* Adiciona espaçamento vertical entre os elementos */
