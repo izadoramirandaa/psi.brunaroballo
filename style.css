@@ -147,21 +147,6 @@ section {
     width: 250px;
 }
 
-.servico img {
-    width: 100%;
-    height: 200px; /* Define uma altura fixa */
-    object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente para caber na área */
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza as transições */
-}
-
-/* Efeito de hover na seção de planos */
-.servico img:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do plano */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar um efeito de elevação */
-}
-
-
 #metodo {
     background-color: #f5f5f5;
     text-align: center;
