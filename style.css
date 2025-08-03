@@ -1,108 +1,313 @@
-/* Fonte elegante e layout limpo inspirado em Alyssa Yasutake */
+/* Definições globais */
+/* Definições globais */
 body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  background-color: #FFF7CC; /* amarelo pastel */
-  color: #666;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 800px;
-  margin: auto;
-  padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 header {
-  background-color: #A388D8; /* roxo pastel */
-  color: white;
-  text-align: center;
-  padding: 60px 20px 40px;
+    background-color: #8CB369;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+.header-titulo {
+    margin-bottom: 10px; /* Espaço entre o título e o nav */
 }
 
-header p {
-  margin: 5px 0 20px;
-  font-size: 1.1rem;
+.header-titulo h2 {
+    margin: 0; /* Remove a margem padrão */
+    font-size: 2rem; /* Tamanho do título principal */
+}
+
+.header-titulo h3 {
+    margin: 0; /* Remove a margem padrão */
+    font-size: 1rem; /* Tamanho do CRP */
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    list-style-type: none;
+    padding: 0;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
+nav ul li {
+    display: inline;
+    margin-right: 15px;
 }
 
-nav a:hover {
-  opacity: 0.8;
+nav ul li a {
+    color: white;
+    text-decoration: none;
 }
 
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #FDF9E3;
+/* Resto do seu CSS segue normalmente... */
+
+@media (max-width: 768px) {
+    .sobre-container, .servicos-container, .metodos-container, .planos-container {
+        flex-direction: column; /* Coloca os itens em uma coluna em vez de em linha */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    h3 {
+    color: white; /* Define a cor do texto como branca */
 }
 
-.hero h2 {
-  font-size: 2rem;
-  color: #A388D8;
+    .servico, .metodo, .plano {
+        width: 100%; /* Garante que os planos e métodos ocupem toda a largura da tela em dispositivos menores */
+        margin: 20px 0; /* Adiciona espaçamento vertical entre os elementos */
+    }
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+@media (max-width: 480px) {
+    .header-titulo h2 {
+        font-size: 1.5rem; /* Reduz o tamanho do título em telas muito pequenas */
+    }
+
+    .header-titulo h3 {
+        font-size: 0.9rem; /* Reduz o subtítulo */
+    }
+
+    .botao-saiba-mais {
+        font-size: 1rem; /* Ajusta o tamanho do botão */
+        padding: 8px 16px;
+    }
 }
 
-.btn {
-  display: inline-block;
-  background-color: #A388D8;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s;
+section {
+    padding: 40px 20px;
 }
 
-.btn:hover {
-  background-color: #9166c8;
+#sobre {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    flex-wrap: wrap; /* Permite que o conteúdo se ajuste em telas menores */
 }
 
-.section {
-  background-color: white;
-  padding: 60px 20px;
-  border-top: 1px solid #e0dada;
+.sobre-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px; /* Adiciona espaçamento entre a imagem e o texto */
 }
 
-.section h2 {
-  color: #A388D8;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+.sobre-imagem img {
+    width: 100%; /* A imagem irá ocupar 100% da largura do contêiner */
+    max-width: 250px; /* Define um tamanho máximo para a imagem */
+    height: auto; /* Mantém a proporção da altura */
+    object-fit: cover; /* Garante que a imagem seja cortada proporcionalmente */
+    border-radius: 8px; /* Arredonda as bordas da imagem */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
 }
 
-.section ul {
-  list-style: disc;
-  padding-left: 20px;
+/* Efeito de hover para a imagem */
+.sobre-imagem img:hover {
+    transform: scale(1.05); /* Aumenta a imagem ligeiramente ao passar o mouse */
+}
+.sobre-texto {
+    max-width: 600px;
 }
 
-footer {
-  background-color: #f5f5f5;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.9rem;
-  color: #999;
+.sobre-texto h2 {
+    color: #4F772D;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
+
+.sobre-texto p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+#servicos {
+    background-color: #8CB369;
+    color: white;
+    text-align: center;
+}
+
+.servicos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servico {
+    margin: 20px;
+    width: 250px;
+}
+
+#metodo {
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+
+.metodos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.metodo {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza as transições */
+}
+
+.metodo:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do plano */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar um efeito de elevação */
+}
+
+#metodo h2 {
+    color: #4F772D; /* Define a mesma cor verde para o título da seção "Método" */
+}
+
+
+.metodo h3 {
+    color: #4F772D;
+}
+
+#contato {
+    background-color: #8CB369;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.planos-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.plano {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza as transições */
+}
+
+/* Efeito de hover na seção de planos */
+.plano:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do plano */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar um efeito de elevação */
+}
+
+.plano h3 {
+    font-size: 1.5rem;
+    color: #4F772D; /* Título em verde */
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* Suaviza a transição da cor */
+}
+
+/* Efeito de hover no título do plano */
+.plano:hover h3 {
+    color: #4F772D; /* Altera a cor do título ao passar o mouse */
+}
+
+.plano p {
+    color: black; /* Texto explicativo em preto */
+}
+
+.plano .preco {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de hover no preço */
+.plano:hover .preco {
+    color: #4F772D; /* Altera a cor do preço ao passar o mouse */
+}
+
+.botao-saiba-mais {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8CB369;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+/* Efeito de hover no botão */
+.botao-saiba-mais:hover {
+    background-color: #4F772D; /* Altera a cor do botão ao passar o mouse */
+}
+
+footer.rodape {
+    background-color: #8CB369;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-item {
+    margin: 10px 0; /* Espaçamento entre os itens de contato */
+    display: flex;
+    justify-content: center; /* Centraliza os itens na linha */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.whatsapp-link,
+.instagram-link,
+.email-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem; /* Tamanho da fonte */
+}
+
+.social-icon {
+    width: 24px; /* Tamanho dos ícones */
+    height: 24px;
+    margin-right: 8px; /* Espaço entre ícone e texto */
+}
+
+.social-icon:hover {
+    filter: brightness(0.8); /* Efeito hover */
+}
+
+/* Defina uma largura fixa para a coluna dos ícones */
+.icon-container {
+    width: 40px; /* Ajuste conforme necessário */
+    display: flex;
+    justify-content: center; /* Centraliza o ícone no container */
+}
+
+/* Ajuste adicional para o email */
+.email-container p {
+    margin: 0; /* Remove margens padrão */
+    font-size: 1rem;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+}]
