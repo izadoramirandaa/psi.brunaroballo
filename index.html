@@ -1,65 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bruna Roballo - Psicóloga</title>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bruna Roballo</title>
+</head>
+<body>
     <header>
-      <div class="container">
-        <h1>Bruna Roballo</h1>
-        <p>Psicóloga Clínica - CRP 00/00000</p>
+        <div class="header-titulo">
+            <h2>Psicóloga Bruna Roballo</h2>
+            <h3>CRP: 06/209841</h3> 
+        </div>
         <nav>
-          <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#metodo">Métodos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
-      </div>
     </header>
-
-    <section class="hero">
-      <div class="container">
-        <h2>Bem-vinda(o) ao seu espaço de escuta e acolhimento</h2>
-        <p>Um lugar seguro para cuidar da sua saúde mental</p>
-        <a href="#contato" class="btn">Agende uma conversa</a>
-      </div>
+    
+    <section id="sobre">
+        <div class="sobre-container">
+            <div class="sobre-imagem">
+                <img src="foto.jpg" alt="Imagem da Psicóloga">
+            </div>
+            <div class="sobre-texto">
+                <h2>Olá, seja bem-vindo(a)!</h2>
+                <p>Sou Bruna Roballo, tenho 28 anos. Possuo graduação em Psicologia pela Universidade São Francisco e Pós-Graduanda em Teoria Cognitiva-Comportamental pelo Instituto Líbano.</p>
+                <p>Acredito que cada indivíduo é único, e meu compromisso é fornecer a você um espaço seguro e acolhedor para explorar desafios, promover o autoconhecimento e catalisar transformações positivas.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="servicos">
+        <h2>Agende a sua sessão</h2>
+        <p>Investir na sua saúde é garantir seu bem-estar e uma qualidade de vida melhor</p>
+        <div class="planos-container">
+            <div class="plano">
+                <h3>Sessão unitária</h3>
+                <p>Pagamento realizado antes de cada sessão via Pix ou Transferência Bancária.</p>
+                <a href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20sessão%20unitária" target="_blank" class="botao-saiba-mais">Saiba mais</a>
+            </div>
+            <div class="plano">
+                <h3>Plano mensal</h3>
+                <p>Pagamento realizado na data programada via Pix ou Transferência Bancária.</p>
+                <a href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20plano%20mensal" target="_blank" class="botao-saiba-mais">Saiba mais</a>
+            </div>
+        </div>
     </section>
 
-    <section id="sobre" class="section">
-      <div class="container">
-        <h2>Sobre Mim</h2>
-        <p>Sou Bruna Roballo, psicóloga formada e apaixonada por ajudar pessoas a se reconectarem consigo mesmas. Atuo com foco na escuta acolhedora e na construção de um espaço terapêutico leve, respeitoso e sem julgamentos.</p>
-      </div>
+    <section id="metodo">
+        <h2>Variedade de métodos e técnicas terapêuticas</h2>
+        <p>Para atender às necessidades individuais dos meus clientes. Conheça cada uma delas:</p>
+        <div class="metodos-container">
+            <div class="metodo">
+                <h3>Terapia Cognitivo-Comportamental (TCC)</h3>
+                <p>Abordagem focada na identificação e modificação de padrões de pensamento e comportamento prejudiciais, promovendo mudanças positivas.</p>
+            </div>
+            <div class="metodo">
+                <h3>Sessões de Fala Orientadas</h3>
+                <p>Diálogo aberto e reflexivo para explorar emoções, desafios e conquistas, proporcionando um espaço seguro para expressão e compreensão.</p>
+            </div>
+            <div class="metodo">
+                <h3>Terapia Comportamental</h3>
+                <p>Utilização de estratégias comportamentais para abordar padrões comportamentais específicos, trabalhando na modificação de hábitos.</p>
+            </div>
+        </div>
     </section>
+    
+    <section id="contato">
+        <footer class="rodape">
+            <p>Entre em contato:</p>
+        
+            <!-- Link do WhatsApp -->
+            <div class="contact-item">
+                <a href="https://wa.me/5519989608367" target="_blank" class="whatsapp-link">
+                    <img src="whatsapp.png" alt="WhatsApp" class="social-icon">
+                    (19) 9 8960-8367
+                </a>
+            </div>
+              
+            <!-- Link do Instagram -->
+            <div class="contact-item">
+                <a href="https://www.instagram.com/psi.brunaroballo" target="_blank" class="instagram-link">
+                    <img src="insta.png" alt="Instagram" class="social-icon">
+                    @psi.brunaroballo
+                </a>
 
-    <section id="servicos" class="section">
-      <div class="container">
-        <h2>Serviços</h2>
-        <ul>
-          <li>Atendimento individual (online)</li>
-          <li>Adolescentes e adultos</li>
-          <li>Abordagem: Terapia Cognitivo-Comportamental</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contato" class="section">
-      <div class="container">
-        <h2>Entre em Contato</h2>
-        <p>Entre em contato para agendar sua primeira sessão.</p>
-        <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" class="btn">Falar no WhatsApp</a>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2025 Bruna Roballo - Todos os direitos reservados.</p>
-      </div>
-    </footer>
-  </body>
+            </div>
+            <!-- Contêiner para o email com ícone -->
+            <div class="contact-item">
+                <div class="email-container">
+                    <img src="email.png" alt="Email" class="social-icon">
+                    <p>psi.brunaroballo@gmail.com</p>
+                </div>
+            </div>
+        
+            <p>&copy; 2024 Bruna Roballo. Todos os direitos reservados.</p>
+        </footer>
+    <script src="scripts.js"></script>
+</body>
 </html>
