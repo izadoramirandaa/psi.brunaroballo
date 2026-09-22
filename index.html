@@ -1,106 +1,229 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Bruna Roballo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bruna Roballo — Psicóloga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241534;
+    --coral:#E8435F;
+    --gold:#F5A623;
+    --teal:#1F6F63;
+    --bg:#FCEEE9;
+    --panel:#FFFFFF;
+    --line: rgba(36,21,52,.12);
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top: calc(72px + env(safe-area-inset-top,0px));}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Work Sans', sans-serif; font-size:17px; line-height:1.6;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; margin:0; line-height:1.1;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  header.site{position:sticky; top:0; z-index:20; background:rgba(252,238,233,.88); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top,0px);}
+  nav{display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:1080px; margin:0 auto;}
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.3rem;}
+  .brand span{display:block; font-family:'Work Sans',sans-serif; font-weight:500; font-size:.68rem; color:var(--teal); letter-spacing:.02em;}
+  .navlinks{display:flex; gap:28px; list-style:none; margin:0; padding:0; font-size:.95rem;}
+  .navlinks a{text-decoration:none; border-bottom:2px solid transparent; padding-bottom:2px; transition:border-color .2s;}
+  .navlinks a:hover, .navlinks a:focus-visible{border-color:var(--coral);}
+  .btn{display:inline-flex; align-items:center; gap:8px; background:var(--coral); color:#fff; text-decoration:none; padding:11px 22px; border-radius:100px; font-weight:600; font-size:.92rem; transition:transform .2s, background .2s;}
+  .btn:hover, .btn:focus-visible{background:#D22E4A; transform:translateY(-1px);}
+  .btn.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--ink);}
+  .btn.ghost:hover{background:var(--ink); color:#fff;}
+  .menu-toggle{display:none;}
+
+  /* HERO */
+  .hero{padding:76px 0 60px;}
+  .hero .wrap{display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center;}
+  .crp{display:inline-block; font-size:.78rem; font-weight:600; color:var(--teal); background:rgba(31,111,99,.1); padding:6px 14px; border-radius:100px; margin-bottom:20px;}
+  .hero h1{font-size:clamp(2.1rem, 4.3vw, 3.4rem); letter-spacing:-.01em;}
+  .hero p.lead{margin-top:20px; font-size:1.1rem; max-width:46ch; color:#463159;}
+  .hero .ctas{margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;}
+  .blob-wrap{position:relative; aspect-ratio:1/1;}
+  .blob-wrap svg{width:100%; height:100%;}
+
+  /* SOBRE */
+  section{padding:64px 0;}
+  .sobre .wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:start;}
+  .kicker{font-size:.85rem; color:var(--coral); font-weight:600; margin-bottom:10px;}
+  .sobre h2{font-size:clamp(1.7rem,3vw,2.2rem);}
+  .sobre .creds{margin-top:22px; border-top:1px solid var(--line); padding-top:22px; font-size:.95rem;}
+  .sobre .creds div{padding:6px 0;}
+  .sobre .creds strong{display:block; font-family:'Fraunces',serif; font-weight:600; font-size:1.02rem;}
+
+  /* SERVIÇOS */
+  .servicos{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .serv-head{max-width:56ch; margin-bottom:44px;}
+  .serv-grid{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .serv-item{padding:38px; position:relative;}
+  .serv-item:first-child{border-right:1px solid var(--line);}
+  .serv-item .tag{font-size:.78rem; font-weight:600; color:var(--gold); text-transform:none; margin-bottom:14px; display:block;}
+  .serv-item h3{font-size:1.4rem; margin-bottom:12px;}
+  .serv-item p{color:#463159; font-size:.97rem; margin-bottom:22px;}
+
+  /* MÉTODOS */
+  .metodos .wrap > p.lead{max-width:56ch; color:#463159; margin-top:10px; margin-bottom:44px;}
+  .met-list{display:flex; flex-direction:column;}
+  .met-row{display:grid; grid-template-columns:220px 1fr; gap:32px; padding:30px 0; border-top:1px solid var(--line);}
+  .met-row:last-child{border-bottom:1px solid var(--line);}
+  .met-row h3{font-size:1.25rem; color:var(--teal);}
+  .met-row p{margin:0; color:#463159;}
+
+  /* CONTATO */
+  .contato{background:var(--ink); color:#FCEEE9;}
+  .contato .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;}
+  .contato h2{color:#fff; font-size:clamp(1.7rem,3vw,2.3rem);}
+  .contato p.lead{color:#D8C9E8; max-width:42ch; margin-top:16px;}
+  .contact-links{display:flex; flex-direction:column; gap:16px;}
+  .contact-links a{display:flex; align-items:center; gap:14px; text-decoration:none; color:#fff; font-size:1.02rem; padding:14px 18px; border:1px solid rgba(255,255,255,.18); border-radius:14px; transition:background .2s, border-color .2s;}
+  .contact-links a:hover, .contact-links a:focus-visible{background:rgba(255,255,255,.08); border-color:var(--coral);}
+  .contact-links .ic{width:22px; height:22px; flex:none;}
+  .contato .btn{margin-top:28px;}
+
+  footer{padding:26px 0; text-align:center; font-size:.85rem; color:#8A7998; background:var(--ink);}
+
+  @media (max-width:820px){
+    .navlinks{display:none;}
+    .hero .wrap, .sobre .wrap, .contato .wrap{grid-template-columns:1fr;}
+    .hero{padding:52px 0 44px;}
+    .blob-wrap{max-width:280px; margin:0 auto;}
+    .serv-grid{grid-template-columns:1fr;}
+    .serv-item:first-child{border-right:none; border-bottom:1px solid var(--line);}
+    .met-row{grid-template-columns:1fr; gap:8px;}
+  }
+</style>
 </head>
 <body>
-    <header>
-        <div class="header-titulo">
-            <h2>Psicóloga Bruna Roballo</h2>
-            <h3>CRP: 06/209841</h3> 
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#metodo">Métodos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="sobre">
-        <div class="sobre-container">
-            <div class="sobre-imagem">
-                <img src="foto.jpg" alt="Imagem da Psicóloga">
-            </div>
-            <div class="sobre-texto">
-                <h2>Olá, seja bem-vindo(a)!</h2>
-                <p>Sou Bruna Roballo, tenho 28 anos. Possuo graduação em Psicologia pela Universidade São Francisco e Pós-Graduanda em Teoria Cognitiva-Comportamental pelo Instituto Líbano.</p>
-                <p>Acredito que cada indivíduo é único, e meu compromisso é fornecer a você um espaço seguro e acolhedor para explorar desafios, promover o autoconhecimento e catalisar transformações positivas.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="servicos">
-        <h2>Agende a sua sessão</h2>
-        <p>Investir na sua saúde é garantir seu bem-estar e uma qualidade de vida melhor</p>
-        <div class="planos-container">
-            <div class="plano">
-                <h3>Sessão unitária</h3>
-                <p>Pagamento realizado antes de cada sessão via Pix ou Transferência Bancária.</p>
-                <a href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20sessão%20unitária" target="_blank" class="botao-saiba-mais">Saiba mais</a>
-            </div>
-            <div class="plano">
-                <h3>Plano mensal</h3>
-                <p>Pagamento realizado na data programada via Pix ou Transferência Bancária.</p>
-                <a href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20plano%20mensal" target="_blank" class="botao-saiba-mais">Saiba mais</a>
-            </div>
-        </div>
-    </section>
 
-    <section id="metodo">
-        <h2>Variedade de métodos e técnicas terapêuticas</h2>
-        <p>Para atender às necessidades individuais dos meus clientes. Conheça cada uma delas:</p>
-        <div class="metodos-container">
-            <div class="metodo">
-                <h3>Terapia Cognitivo-Comportamental (TCC)</h3>
-                <p>Abordagem focada na identificação e modificação de padrões de pensamento e comportamento prejudiciais, promovendo mudanças positivas.</p>
-            </div>
-            <div class="metodo">
-                <h3>Sessões de Fala Orientadas</h3>
-                <p>Diálogo aberto e reflexivo para explorar emoções, desafios e conquistas, proporcionando um espaço seguro para expressão e compreensão.</p>
-            </div>
-            <div class="metodo">
-                <h3>Terapia Comportamental</h3>
-                <p>Utilização de estratégias comportamentais para abordar padrões comportamentais específicos, trabalhando na modificação de hábitos.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contato">
-        <footer class="rodape">
-            <p>Entre em contato:</p>
-        
-            <!-- Link do WhatsApp -->
-            <div class="contact-item">
-                <a href="https://wa.me/5519989608367" target="_blank" class="whatsapp-link">
-                    <img src="whatsapp.png" alt="WhatsApp" class="social-icon">
-                    (19) 9 8960-8367
-                </a>
-            </div>
-              
-            <!-- Link do Instagram -->
-            <div class="contact-item">
-                <a href="https://www.instagram.com/psi.brunaroballo" target="_blank" class="instagram-link">
-                    <img src="insta.png" alt="Instagram" class="social-icon">
-                    @psi.brunaroballo
-                </a>
+<header class="site">
+  <nav>
+    <div class="brand">Bruna Roballo<span>Psicóloga · CRP 06/209841</span></div>
+    <ul class="navlinks">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#metodos">Métodos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn" href="https://wa.me/5519989608367" target="_blank" rel="noopener">Agendar sessão</a>
+  </nav>
+</header>
 
-            </div>
-            <!-- Contêiner para o email com ícone -->
-            <div class="contact-item">
-                <div class="email-container">
-                    <img src="email.png" alt="Email" class="social-icon">
-                    <p>psi.brunaroballo@gmail.com</p>
-                </div>
-            </div>
-        
-            <p>&copy; 2024 Bruna Roballo. Todos os direitos reservados.</p>
-        </footer>
-    <script src="scripts.js"></script>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="crp">CRP 06/209841</span>
+      <h1>Um espaço seguro pra você se encontrar.</h1>
+      <p class="lead">Sou Bruna Roballo, psicóloga formada pela Universidade São Francisco e pós-graduanda em Terapia Cognitivo-Comportamental pelo Instituto Líbano. Acredito que cada pessoa é única — e meu trabalho é te acompanhar no autoconhecimento e na transformação.</p>
+      <div class="ctas">
+        <a class="btn" href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20agendar%20uma%20sessão" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+        <a class="btn ghost" href="#metodos">Conhecer os métodos</a>
+      </div>
+    </div>
+    <div class="blob-wrap" aria-hidden="true">
+	<img src="foto.jpg" alt="Bruna Roballo, psicóloga">
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Sobre</div>
+      <h2>Acolhimento com base técnica</h2>
+    </div>
+    <div>
+      <p>Meu compromisso é oferecer um espaço seguro e sem julgamentos para você explorar desafios, entender padrões e construir mudanças reais — no seu tempo.</p>
+      <div class="creds">
+        <div><strong>Graduação</strong>Psicologia — Universidade São Francisco</div>
+        <div><strong>Pós-graduação</strong>Terapia Cognitivo-Comportamental — Instituto Líbano</div>
+        <div><strong>Registro</strong>CRP 06/209841</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="wrap">
+    <div class="serv-head">
+      <div class="kicker">Serviços</div>
+      <h2>Agende a sua sessão</h2>
+      <p class="lead" style="color:#463159; margin-top:10px;">Investir na sua saúde mental é investir na sua qualidade de vida. Escolha o formato que faz mais sentido pra você.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-item">
+        <span class="tag">Avulsa</span>
+        <h3>Sessão unitária</h3>
+        <p>Pagamento realizado antes de cada sessão, via Pix ou transferência bancária.</p>
+        <a class="btn" href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20sessão%20unitária" target="_blank" rel="noopener">Saiba mais</a>
+      </div>
+      <div class="serv-item">
+        <span class="tag">Recorrente</span>
+        <h3>Plano mensal</h3>
+        <p>Pagamento realizado na data programada, via Pix ou transferência bancária.</p>
+        <a class="btn" href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20plano%20mensal" target="_blank" rel="noopener">Saiba mais</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="metodos" id="metodos">
+  <div class="wrap">
+    <div class="kicker">Métodos</div>
+    <h2>Técnicas terapêuticas</h2>
+    <p class="lead">Cada pessoa chega com uma necessidade diferente. Por isso, combino abordagens conforme o que faz sentido pra sua história.</p>
+    <div class="met-list">
+      <div class="met-row">
+        <h3>Terapia Cognitivo-Comportamental</h3>
+        <p>Foco em identificar e modificar padrões de pensamento e comportamento que trazem sofrimento, promovendo mudanças concretas e duradouras.</p>
+      </div>
+      <div class="met-row">
+        <h3>Sessões de fala orientadas</h3>
+        <p>Diálogo aberto e reflexivo para explorar emoções, desafios e conquistas — um espaço seguro para se expressar e se compreender melhor.</p>
+      </div>
+      <div class="met-row">
+        <h3>Terapia comportamental</h3>
+        <p>Estratégias voltadas a padrões comportamentais específicos, trabalhando a modificação de hábitos de forma prática.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div>
+      <div class="kicker" style="color:var(--gold)">Contato</div>
+      <h2>Vamos conversar?</h2>
+      <p class="lead">Me chama e vamos entender juntas o melhor caminho pra você começar.</p>
+      <a class="btn" href="https://wa.me/5519989608367" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://wa.me/5519989608367" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12a8 8 0 1 1-3.6-6.7L20 4l-1 3.6A8 8 0 0 1 20 12Z"/><path d="M9 10c0 3 3 6 6 6"/></svg>
+        (19) 9 8960-8367
+      </a>
+      <a href="https://www.instagram.com/psi.brunaroballo" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        @psi.brunaroballo
+      </a>
+      <a href="mailto:psi.brunaroballo@gmail.com">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+        psi.brunaroballo@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Bruna Roballo · Todos os direitos reservados.</footer>
+
 </body>
 </html>
