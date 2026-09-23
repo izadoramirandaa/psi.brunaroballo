@@ -62,6 +62,13 @@
   .sobre .creds div{padding:6px 0;}
   .sobre .creds strong{display:block; font-family:'Fraunces',serif; font-weight:600; font-size:1.02rem;}
 
+  .foco-tags{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;}
+  .foco-tag{display:inline-block; padding:10px 20px; border-radius:100px; border:1.5px solid var(--ink); font-size:.95rem; font-weight:500;}
+  .foco-tag.highlight{background:var(--teal); border-color:var(--teal); color:#fff;}
+  .foco-note{margin-top:22px; max-width:58ch; color:#463159; font-size:.97rem;}
+  .foco-block{margin-top:36px; padding-top:32px; border-top:1px solid var(--line);}
+  .foco-block h3{font-size:1.1rem; color:var(--teal);}
+
   /* SERVIÇOS */
   .servicos{background:var(--panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
   .serv-head{max-width:56ch; margin-bottom:44px;}
@@ -149,9 +156,19 @@
     <div>
       <div class="kicker">Sobre</div>
       <h2>Acolhimento com base técnica</h2>
+
+      <div class="foco-block">
+        <h3>Principais áreas de atuação</h3>
+        <div class="foco-tags">
+          <span class="foco-tag">Ansiedade</span>
+          <span class="foco-tag">Autoestima</span>
+          <span class="foco-tag">Relacionamentos</span>
+          <span class="foco-tag highlight">Público LGBTQIA+</span>
+        </div>
+      </div>
     </div>
     <div>
-      <p>Meu compromisso é oferecer um espaço seguro e sem julgamentos para você explorar desafios, entender padrões e construir mudanças reais — no seu tempo.</p>
+      <p>Meu compromisso é oferecer um espaço seguro e sem julgamentos para você explorar desafios, entender padrões e construir mudanças reais.</p>
       <div class="creds">
         <div><strong>Graduação</strong>Psicologia — Universidade São Francisco</div>
         <div><strong>Pós-graduação</strong>Terapia Cognitivo-Comportamental — Instituto Líbano</div>
@@ -183,38 +200,24 @@
         <a class="btn" href="https://wa.me/5519989608367?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20plano%20mensal" target="_blank" rel="noopener">Saiba mais</a>
       </div>
     </div>
-    <p class="practical-note">Sessões com duração de 50 minutos, com encontros semanais ou quinzenais — a frequência é combinada de acordo com a sua necessidade.</p>
   </div>
 </section>
 
 <section class="metodos" id="metodos">
   <div class="wrap">
-    <div class="kicker">Métodos</div>
-    <h2>Técnicas terapêuticas</h2>
-    <p class="lead">Cada pessoa chega com uma necessidade diferente. Por isso, combino abordagens conforme o que faz sentido pra sua história.</p>
-    <div class="met-list">
-      <div class="met-row">
-        <h3>Terapia Cognitivo-Comportamental</h3>
-        <p>Foco em identificar e modificar padrões de pensamento e comportamento que trazem sofrimento, promovendo mudanças concretas e duradouras.</p>
-      </div>
-      <div class="met-row">
-        <h3>Sessões de fala orientadas</h3>
-        <p>Diálogo aberto e reflexivo para explorar emoções, desafios e conquistas — um espaço seguro para se expressar e se compreender melhor.</p>
-      </div>
-      <div class="met-row">
-        <h3>Terapia comportamental</h3>
-        <p>Estratégias voltadas a padrões comportamentais específicos, trabalhando a modificação de hábitos de forma prática.</p>
-      </div>
-    </div>
+    <div class="kicker">Abordagem</div>
+    <h2>Terapia Cognitivo-Comportamental</h2>
+    <p class="lead">Foco em identificar e modificar padrões de pensamento, comportamento e emoções, promovendo mudanças concretas e duradouras — no seu tempo, e no seu ritmo.</p>
 
     <div class="benefits">
       <h3>O que você pode esperar do processo</h3>
       <ul>
         <li>Acolhimento das suas dores e ajuda na compreensão das suas emoções</li>
         <li>Ferramentas práticas para manejar ansiedade e outras questões do dia a dia</li>
+        <li>Trabalho de autoestima e autoconhecimento</li>
+        <li>Comunicação e relacionamentos mais saudáveis</li>
+        <li>Espaço afirmativo e seguro para vivências e identidade LGBTQIA+</li>
         <li>Identificação dos seus gatilhos emocionais</li>
-        <li>Trabalho de autoestima</li>
-        <li>Métodos para relacionamentos mais saudáveis através da comunicação</li>
       </ul>
     </div>
   </div>
@@ -225,7 +228,7 @@
     <div>
       <div class="kicker" style="color:var(--gold)">Contato</div>
       <h2>Vamos conversar?</h2>
-      <p class="lead">Me chama e vamos entender juntas o melhor caminho pra você começar.</p>
+      <p class="lead">Me chama e vamos entender juntos o melhor caminho pra você começar.</p>
       <a class="btn" href="https://wa.me/5519989608367" target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
     <div class="contact-links">
